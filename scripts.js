@@ -1,8 +1,10 @@
 async function fact() {
-    const data = await fetch("mongodb+srv://asvirts:Nashville4117@cluster0.udils2m.mongodb.net/test")
-    const fact = await data.json()
-    console.log(fact)
-    document.getElementById("fact").innerHTML = fact.text
+    const data = await fetch("https://api.nytimes.com/svc/books/v3/lists/names.json?api-key=KKycLqaAQfhTDGPrYQXnT2Mcm71dUENk")
+    const books = await data.json()
+    const el = document.getElementById("fact")
+    el.textContent = "List:"
+    el.appendChild(document.createElement("li"))
+
   }
   
   fact()
